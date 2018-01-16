@@ -78,4 +78,18 @@ contract ECRToken is Owned, SafeMath  {
     return true;
   }
 
+  // Reduce ECR
+  function reduce(address from, uint amount) public returns (bool){
+    if( balanceOf(from) < amount ) {
+      revert();
+    }
+
+    if( safeSub(balanceOf(from), amount)  == 0 ) {
+      revert();
+    }
+
+    balances[from] -= amount;
+    return true;
+  }
+
 }

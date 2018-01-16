@@ -62,9 +62,4 @@ contract LABankdapp is Utils, Owned, ECRToken{
         mapSkills[_uad].length--;
         return(mapSkills[_uad].length);
     }
-
-    function countSkills(address _uad) public constant returns(uint){
-        return mapSkills[_uad].length;
-    }
-
 }

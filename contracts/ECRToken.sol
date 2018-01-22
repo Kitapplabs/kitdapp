@@ -16,8 +16,8 @@ contract SafeMath {
 
 contract ECRToken is Owned, SafeMath  {
 
-  string public symbol;
-  string public name;
+  bytes32 public symbol;
+  bytes32 public name;
   uint public decimals;
 
   mapping (address => uint) balances;
@@ -38,12 +38,12 @@ contract ECRToken is Owned, SafeMath  {
   }
 
   // Function to access name of token .
-  function name() public constant returns (string){
+  function name() public constant returns (bytes32){
       return name;
   }
 
  // Function to access symbol of token .
-  function symbol() public constant returns (string ){
+  function symbol() public constant returns (bytes32){
       return symbol;
   }
 
@@ -57,13 +57,13 @@ contract ECRToken is Owned, SafeMath  {
   }
 
   //Transfer permitted only for owner here
-  function transfer(address to, uint amount) onlyOwner public returns (bool) {
-    return xfer(to, amount);
+  function transfer(address from, address to, uint amount) onlyOwner public returns (bool) {
+    return xfer(from, to, amount);
   }
 
   // Process a transfer internally.
-  function xfer(address to, uint amount) internal returns (bool){
-    if( balanceOf(msg.sender) < amount ) {
+  function xfer(address from, address to, uint amount) internal returns (bool){
+    if( balanceOf(from) < amount ) {
       revert();
     }
 
@@ -71,10 +71,10 @@ contract ECRToken is Owned, SafeMath  {
       revert();
     }
 
-    balances[msg.sender] -= amount;
+    balances[from] -= amount;
     balances[to] += amount;
 
-    LogTransfer( msg.sender, to, amount );
+    LogTransfer( from, to, amount );
     return true;
   }
 

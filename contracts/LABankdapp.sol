@@ -7,8 +7,8 @@ import './Utils.sol';
 contract User{}
 
 contract LABankdapp is Utils, Owned, ECRToken{
-    /* Define variable greeting of the type string */
-    string greeting;
+    /* Define variable greeting of the type bytes32 */
+    bytes32 greeting;
     address[] private users;
     mapping(address => bytes32[]) private mapSkills;
 
@@ -17,15 +17,18 @@ contract LABankdapp is Utils, Owned, ECRToken{
     }
 
     function LABankdapp() public{
-        greeting = "HELLO WORLD";
+        greeting = stringToBytes32("HELLO WORLD");
     }
 
-    function setGreeter(string _greeting) public {
+    function setGreeter(bytes32 _greeting) public {
         greeting = _greeting;
     }
 
-    /* Main function */
-    function greet() constant public returns (string) {
+	function getSender() public constant returns(address){
+        return msg.sender;
+    }
+
+    function greet() public constant returns(bytes32) {
         return greeting;
     }
 
@@ -34,9 +37,10 @@ contract LABankdapp is Utils, Owned, ECRToken{
         else return address(0);
     }
 
-    function insertUser() public returns(address){
+    function insertUser(uint initialAmount) public returns(address){
         address uad = new User();
         users.push(uad);
+        balances[uad] = initialAmount; // ex pour les adhérents 
         return uad;
     }
 

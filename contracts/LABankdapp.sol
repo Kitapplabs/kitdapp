@@ -37,11 +37,14 @@ contract LABankdapp is Utils, Owned, ECRToken{
         else return address(0);
     }
 
-    function insertUser(uint initialAmount) public returns(address){
+    function getLastUser() public constant returns(uint){
+      return users.length;
+    }
+
+    function insertUser(uint initialAmount) public{
         address uad = new User();
         users.push(uad);
-        balances[uad] = initialAmount; // ex pour les adhérents 
-        return uad;
+        balances[uad] = initialAmount; // ex pour les adhérents
     }
 
     function getSkills(address _uad) public constant returns(bytes32[]) {

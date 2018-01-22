@@ -35,7 +35,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 517,
+          "SourceUnit": 587,
           "absolutePath": "/T/LAB/LABank/LABankdapp/contracts/Owned.sol",
           "file": "./Owned.sol",
           "scope": 251,
@@ -629,7 +629,7 @@
         "attributes": {
           "contractDependencies": [
             45,
-            516
+            586
           ],
           "contractKind": "contract",
           "documentation": null,
@@ -637,7 +637,7 @@
           "linearizedBaseContracts": [
             250,
             45,
-            516
+            586
           ],
           "name": "ECRToken",
           "scope": 251
@@ -654,7 +654,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "Owned",
-                  "referencedDeclaration": 516,
+                  "referencedDeclaration": 586,
                   "type": "contract Owned"
                 },
                 "id": 46,
@@ -979,7 +979,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 558,
+                              "referencedDeclaration": 628,
                               "type": "function () pure",
                               "value": "revert"
                             },
@@ -1102,7 +1102,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 554,
+                                      "referencedDeclaration": 624,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -1909,7 +1909,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 493,
+                      "referencedDeclaration": 563,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -2197,7 +2197,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 554,
+                                      "referencedDeclaration": 624,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2264,7 +2264,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 558,
+                                      "referencedDeclaration": 628,
                                       "type": "function () pure",
                                       "value": "revert"
                                     },
@@ -2474,7 +2474,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 558,
+                                      "referencedDeclaration": 628,
                                       "type": "function () pure",
                                       "value": "revert"
                                     },
@@ -2557,7 +2557,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 554,
+                                      "referencedDeclaration": 624,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -2741,7 +2741,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 554,
+                                  "referencedDeclaration": 624,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -3061,7 +3061,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 558,
+                                      "referencedDeclaration": 628,
                                       "type": "function () pure",
                                       "value": "revert"
                                     },
@@ -3271,7 +3271,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 558,
+                                      "referencedDeclaration": 628,
                                       "type": "function () pure",
                                       "value": "revert"
                                     },
@@ -3432,5 +3432,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-01-21T12:18:54.022Z"
+  "updatedAt": "2018-01-22T10:02:56.353Z"
 }

@@ -57,13 +57,13 @@ contract ECRToken is Owned, SafeMath  {
   }
 
   //Transfer permitted only for owner here
-  function transfer(address from, address to, uint amount) onlyOwner public returns (bool) {
-    return xfer(from, to, amount);
+  function transfer(address to, uint amount) onlyOwner public returns (bool) {
+    return xfer(to, amount);
   }
 
   // Process a transfer internally.
-  function xfer(address from, address to, uint amount) internal returns (bool){
-    if( balanceOf(from) < amount ) {
+  function xfer(address to, uint amount) internal returns (bool){
+    if( balanceOf(msg.sender) < amount ) {
       revert();
     }
 
@@ -71,10 +71,10 @@ contract ECRToken is Owned, SafeMath  {
       revert();
     }
 
-    balances[from] -= amount;
+    balances[msg.sender] -= amount;
     balances[to] += amount;
 
-    LogTransfer( from, to, amount );
+    LogTransfer( msg.sender, to, amount );
     return true;
   }
 
